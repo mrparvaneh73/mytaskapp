@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/photooftask"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.12" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chooserphoto"
+            android:layout_width="58dp"
+            android:layout_height="53dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/white"
+
+            android:contentDescription="TODO"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="32dp"
+            app:srcCompat="@drawable/takephoto" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_title"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+         app:endIconMode="clear_text" >
+        <EditText
+            android:id="@+id/title_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/title"
+            android:inputType="textShortMessage"
+            android:importantForAutofill="yes"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text" >
+            <EditText
+                android:id="@+id/description_et"
+                android:paddingBottom="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                android:importantForAutofill="yes" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <DatePicker
+            android:theme="@style/Widget.AppCompat.TextView.SpinnerItem"
+            android:id="@+id/btndatapicker"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <TimePicker
+            android:theme="@style/Widget.AppCompat.TextView.SpinnerItem"
+            android:id="@+id/btntimepicker"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+
+            android:timePickerMode="spinner" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/done_checkbox"
+            android:layout_width="88dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+            <CheckBox
+                android:id="@+id/doing_checkbox"
+                android:layout_width="88dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="50dp"
+                android:text="@string/doing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/description"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/cancel"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_save"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/save"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.271"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
